@@ -50,7 +50,6 @@ public class StudentControllerTest {
     private StudentTeacherMappingRepository studentTeacherMappingRepository;
 
 
-
     @Test
     public void should_add_the_student_and_return_success_code() {
         //Given
@@ -233,15 +232,16 @@ public class StudentControllerTest {
         verify(studentTeacherMappingRepository).save(captor.capture());
         StudentTeacherMapping mapping = captor.getValue();
 
-        assertEquals(1L,mapping.getStudentId());
-        assertEquals(1L,mapping.getTeacherId());
-        assertEquals("Ayushi",mapping.getStudentName());
-        assertEquals("A",mapping.getSection());
-        assertEquals("95%",mapping.getPercentage());
-        assertEquals("Maths",mapping.getSubject());
-        assertEquals("Renzo",mapping.getTeacherName());
+        assertEquals(1L, mapping.getStudentId());
+        assertEquals(1L, mapping.getTeacherId());
+        assertEquals("Ayushi", mapping.getStudentName());
+        assertEquals("A", mapping.getSection());
+        assertEquals("95%", mapping.getPercentage());
+        assertEquals("Maths", mapping.getSubject());
+        assertEquals("Renzo", mapping.getTeacherName());
 
     }
+}
 
 }
 
