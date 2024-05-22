@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="warn">
+    <Properties>
+        <Property name="basePath">C:/temp/logs</Property>
+    </Properties>
+    <Appenders>
+        <Console name="Console"
+                 target="SYSTEM_OUT">
+            <Patternlayout
+                    pattern="%d{HH:mm:ss.SSS} [%t] %-5level
+                %logger{36} - %msg%n"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Root level="DEBUG">
+            <appender-ref ref="Console"/>
+        </Root>
+    </Loggers>
+</Configuration>

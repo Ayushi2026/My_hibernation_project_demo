@@ -1,0 +1,24 @@
+server:
+  port: 8083
+
+spring:
+  application.name: hibernation_demo
+#  config.import: local/application-merak.yml
+  datasource:
+    url: jdbc:h2:mem:testdb;MODE=Oracle;DB_CLOSE_DELAY=-1
+    driverClassName: org.h2.Driver
+    username: sa
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+    generate-ddl: false
+    hibernate.ddl-auto: none
+  h2.console.enabled: true
+  liquibase:
+    user: sa
+    contexts: local
+    change-log: 'classpath:/database/changelog-master.xml'
+    enabled: true
+  sql.init:
+    platform: h2
+
